@@ -1,0 +1,45 @@
+
+Baccarat Game Play Logic
+============================
+
+Reset logic
+*********************
+The game is reset when resetb == 1'b0 (active low) --> when KEY3 is pushed
+This resets the state to the starting state and clears all the reg4 card registers.
+The reset is ASYNCHRONOUS
+
+Opening actions
+*********************
+Two cards are dealt to both the player and the dealer face up 
+    (first card to the player, second card to dealer, third card to the player, fourth card to the dealer).
+
+The score of each hand is computed.
+
+Game Logic
+*********************
+If (player’s hand's score == 8 or 9 OR dealer’s hand score == 8 or 9)
+    game ends: called a “natural”
+    whoever has the higher score wins (if the scores are the same, it is a tie)
+Else if (the player’s score from their first two cards == [0, 5])
+    player gets third card = yes
+    case(dealer's score from first two cards) // does the dealer get a third card logic
+        7: dealer gets third card = no;
+        6: dealer gets third card = (player's third card face value == (6 or 7)) ? yes : no;             
+        5: dealer gets third card = (player's third card face value == (4, 5, 6, or 7)) ? yes : no;
+        4: dealer gets third card = (player's third card face value == (2, 3, 4, 5, 6, or 7)) ? yes : no; 
+        3: dealer gets third card = (player's third card face value == !8) ? yes : no; (anything but 8) 
+        0, 1, or 2: dealer gets third card = yes;
+        default: dealer gets third card = no; // can use yes or no for default
+Else if (the player’s score from their first two cards == 6 or 7)
+    player gets third card = no
+    If (the dealer’s score from their first two cards == [0, 5])
+        dealer gets third card = yes
+    Else 
+        dealer gets third card = no
+
+End Game Logic
+*********************
+// Else (but not needed)
+The game is over. 
+Scores are computed. 
+Whoever has the higher score wins, or if they are the same, it is a tie.
