@@ -17,7 +17,7 @@ Advanced combinational and sequential electronic system design. Hardware specifi
 
 *Brief:* 
 *Subjects:*  
-![block](figures/block_diagram)
+<p align="center"><img src="Figures/block-diagram.png" width="20%" height="20%" title="Lab 1 Block Diagram"></p>
 
 
 
