@@ -1,4 +1,4 @@
-# CPEN311
+# CPEN 311
 
 Advanced combinational and sequential electronic system design. Hardware specification, modeling, and simulation using hardware description languages (HDLs) and CAD tools. Design with programmable logic including FPGA's. Applications include complex state machines, microcontrollers, arithmetic circuits, and interface units
 
@@ -17,6 +17,7 @@ Advanced combinational and sequential electronic system design. Hardware specifi
 
 *Brief:* 
 *Subjects:*  
+![block](figures/block_diagram)
 
 
 
